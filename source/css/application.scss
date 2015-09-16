@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* ==========================================================================
+ * Imports / Includes
+ * ========================================================================== */
+
+@import "variables";             // Bootstrap variable overrides
+@import "bootstrap-includes";    // Bootstrap core
+
+#toc {
+  &.affix {
+    width: 350px;
+  }
+}

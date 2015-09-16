@@ -1,22 +1,32 @@
+require "slim"
 require "extensions/views"
+
+::Slim::Engine.set_options pretty: true, format: :html
 
 activate :views
 activate :directory_indexes
+activate :search_engine_sitemap
 
 set :relative_links, true
-set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascripts'
-set :images_dir, 'assets/images'
-set :fonts_dir, 'assets/fonts'
+set :css_dir, 'css'
+set :js_dir, 'js'
+set :images_dir, 'images'
+set :fonts_dir, 'fonts'
+set :partials_dir, '_partials'
 set :layout, 'layouts/application'
+
+set :markdown_engine, :redcarpet
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true
 
 configure :development do
  activate :livereload
 end
 
 configure :build do
-  # Relative assets needed to deploy to Github Pages
-  activate :relative_assets
+  activate :minify_css
+  activate :minify_javascript
+  activate :minify_html
+  activate :asset_hash
 end
 
 activate :deploy do |deploy|
@@ -24,15 +34,24 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
+after_configuration do
+  sprockets.append_path File.join root.to_s, "bower_components"
+end
+
 helpers do
-  def nav_link(link_text, page_url, options = {})
-    options[:class] ||= ""
-    if current_page.url.length > 1
-      current_url = current_page.url.chop
-    else
-      current_url = current_page.url
-    end
-    options[:class] << " active" if page_url == current_url
-    link_to(link_text, page_url, options)
+  def table_of_contents(resource)
+    content = File.read(resource.source_file)
+    content = content.gsub(/^(---\s*\n.*?\n?)^(---\s*$\n?)/m,'')
+    toc_renderer = Redcarpet::Render::HTML_TOC.new
+
+    markdown = Redcarpet::Markdown.new(toc_renderer, nesting_level: 1) # nesting_level is optional
+    markdown.render(content)
   end
 end
+
+# ready do
+#   sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
+#     proxy "/categories/#{category}.html", "category.html",
+#       :locals => { :category => category, :pages => pages }
+#   end
+# end
