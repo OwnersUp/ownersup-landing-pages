@@ -45,7 +45,8 @@ helpers do
     toc_renderer = Redcarpet::Render::HTML_TOC.new
 
     markdown = Redcarpet::Markdown.new(toc_renderer, nesting_level: 1) # nesting_level is optional
-    markdown.render(content)
+    html = markdown.render(content)
+    html.sub(/^<ul>/, '<ul class="nav">')
   end
 end
 

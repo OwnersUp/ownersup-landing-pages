@@ -1,8 +1,8 @@
 = wrap_layout :application
   .container
-    .row data-spy="scroll" data-target="#toc"
+    .row
       article.col-md-8
         = yield
-      aside.col-md-4
-        #toc data-spy="affix" data-offset-top="0"
+      aside.col-md-4.hidden-xs.hidden-sm
+        #toc data-spy="affix" data-offset-top="50"
           = table_of_contents(current_page)

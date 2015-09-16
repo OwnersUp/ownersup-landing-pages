@@ -1,0 +1,5 @@
+{
+  "name": "ownersup-docs",
+  "root": "./build",
+  "clean_urls": true
+}
