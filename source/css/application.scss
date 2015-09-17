@@ -31,6 +31,17 @@ body { position: relative; }
   }
 }
 
+.thumbnail {
+  h3 {
+    margin-top: 8px;
+  }
+
+  &:hover {
+    background: $brand-light;
+    text-decoration: none;
+  }
+}
+
 #toc {
   &.affix {
     width: 350px;

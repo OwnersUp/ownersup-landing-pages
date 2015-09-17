@@ -3,11 +3,14 @@ require "extensions/views"
 
 ::Slim::Engine.set_options pretty: true, format: :html
 
+set :url_root, 'http://docs.ownersup.com'
+
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :partials_dir, '_partials'
+page "/faq/*/*", :layout => "article"
 
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true

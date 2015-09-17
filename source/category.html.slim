@@ -3,6 +3,6 @@
       h1.text-capitalize="#{category} Articles"
     .row
       article.col-md-8
-        ul
+        ul.nav
           - articles.each do |article|
             li= link_to article.data.title, article.url

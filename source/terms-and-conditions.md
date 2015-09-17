@@ -1,6 +1,6 @@
 ---
 title: Terms and Conditions
-layout: page
+layout: document
 ---
 Last updated: September 16, 2015
 
