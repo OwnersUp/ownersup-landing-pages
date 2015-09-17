@@ -1,8 +1,10 @@
 = wrap_layout :layout
   .container
+    .page-header
+      h1=current_page.data.title
     .row
-      article.col-md-8
+      article.col-md-7
         = yield
-      aside.col-md-4.hidden-xs.hidden-sm
-        #toc data-spy="affix" data-offset-top="50"
+      aside.col-md-5.hidden-xs.hidden-sm
+        #toc data-spy="affix" data-offset-top="165"
           = table_of_contents(current_page)

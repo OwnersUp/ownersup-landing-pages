@@ -2,14 +2,10 @@
 title: Privacy Policy
 layout: page
 ---
-
 <!--
  This is the Terms of Service that appears at http://OwnersUp.com/privacy/
  You can also find me at http://github.com/OwnersUp/ownersup-legal
  -->
-
-## Privacy Policy
-
 Your privacy is critically important to us. At OwnersUp we have a few fundamental principles:
 
 *   We don't ask you for personal information unless we truly need it. (We can't stand services that ask you for things like your gender or income level for no apparent reason.)

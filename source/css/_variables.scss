@@ -17,6 +17,7 @@ $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:         #F06352;
 $brand-secondary:       #389e96;
+$brand-light: #F2F2F2;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -44,7 +45,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Noto Sans", sans-serif;
+$font-family-sans-serif:  "Lato", sans-serif;
 // $font-family-serif:       "Merriweather", "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
@@ -364,7 +365,8 @@ $container-lg:                 $container-large-desktop !default;
 
 // Basics of a navbar
 $navbar-height:                    50px !default;
-$navbar-margin-bottom:             $line-height-computed !default;
+// $navbar-margin-bottom:             $line-height-computed !default;
+$navbar-margin-bottom:             0;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
@@ -492,8 +494,8 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $brand-primary;
-$jumbotron-heading-color:        #fff;
+$jumbotron-bg:                   $brand-light;
+$jumbotron-heading-color:        $gray;
 $jumbotron-font-size:            ceil(($font-size-base * 1.2)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 2.5)) !default;
 
@@ -866,7 +868,8 @@ $blockquote-font-size:        ($font-size-base * 1.25) !default;
 //** Blockquote border color
 $blockquote-border-color:     $gray-lighter !default;
 //** Page header border color
-$page-header-border-color:    $gray-lighter !default;
+// $page-header-border-color:    $gray-lighter !default;
+$page-header-border-color:    $brand-primary;
 //** Width of horizontal description list titles
 $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
