@@ -8,7 +8,6 @@ set :js_dir, 'js'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :partials_dir, '_partials'
-set :layout, 'layouts/application'
 
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true
