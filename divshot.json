@@ -1,5 +1,10 @@
 {
   "name": "ownersup-docs",
   "root": "./build",
-  "clean_urls": true
-}
+  "clean_urls": true,
+  "cache_control": {
+    "/css/**": 31536000,
+    "/js/**": 31536000,
+    "/": 600
+  }
+ }

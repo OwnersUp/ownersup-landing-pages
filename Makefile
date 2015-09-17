@@ -1,12 +1,12 @@
-.PHONY: clean stage prod
+.PHONY: clean build stage prod
 
 clean:
 	rm -rf build
 
 build:
-	middleman build
+	middleman build --clean
 
-stage:
+stage: build
 	divshot push staging
 
 prod: build
