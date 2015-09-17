@@ -1,0 +1,9 @@
+- sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
+	-if category
+		.col-md-4
+			a.thumbnail href="/faq/#{category}/"
+				.caption.text-center
+					h3.text-capitalize=category
+					p= data.categories[category]
+					p
+						strong= "#{pages.count} Articles"

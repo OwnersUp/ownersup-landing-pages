@@ -54,14 +54,18 @@ body { position: relative; }
     li {
       list-style: none;
 
-      &.active {
-        font-weight: 700;
+      &.active a {
+        background-color: $brand-secondary;
+        color: #fff;
       }
     }
 
     a {
       display: block;
-      padding: $padding-base-vertical 0;
     }
   }
+}
+
+footer.container {
+  margin-top: 2em;
 }

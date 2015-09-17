@@ -11,5 +11,10 @@ nav.navbar.navbar-default
 
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
+        =nav_link('FAQ', '/faq')
         =nav_link('Terms & Conditions', '/terms-and-conditions')
         =nav_link('Privacy Policy', '/privacy')
+        / =nav_link('Email Support', 'mailto:support@ownersup.com')
+
+      .nav.navbar-nav.navbar-right
+        a.btn.btn-primary.navbar-btn href="mailto:support@ownersup.com" Email Support
