@@ -4,6 +4,7 @@ source "http://rubygems.org"
 
 gem "middleman"
 gem "middleman-deploy"
+gem 'middleman-pry'
 
 gem "slim"
 gem "redcarpet"

@@ -3,11 +3,6 @@ require "extensions/views"
 
 ::Slim::Engine.set_options pretty: true, format: :html
 
-activate :views
-activate :directory_indexes
-activate :search_engine_sitemap
-
-set :relative_links, true
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
@@ -17,6 +12,10 @@ set :layout, 'layouts/application'
 
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true
+
+activate :views
+activate :directory_indexes
+activate :search_engine_sitemap
 
 configure :development do
  activate :livereload
@@ -50,9 +49,9 @@ helpers do
   end
 end
 
-# ready do
-#   sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
-#     proxy "/categories/#{category}.html", "category.html",
-#       :locals => { :category => category, :pages => pages }
-#   end
-# end
+ready do
+  sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
+    proxy "/faq/#{category}.html", "category.html",
+      :locals => { :category => category, :articles => pages }, :ignore => true
+  end
+end

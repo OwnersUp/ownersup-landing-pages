@@ -1,3 +1,24 @@
 .jumbotron
 	.container.text-center
 		h1 Support & Documentation
+
+.container
+	.row
+		.col-md-12
+			h1 Need some help?
+			p
+				| Email us!
+				a href="mailto:support@ownersup.com" support@ownersup.com
+
+	.row
+		.col-sm-12
+			h2 Can we help you with something specific?
+
+		- sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
+			-if category
+				.col-md-4
+					a.thumbnail href="/faq/#{category}/"
+						.caption
+							h3.text-capitalize=category
+							p= data.categories[category]
+							p= "#{pages.count} Articles"
