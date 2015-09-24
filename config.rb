@@ -53,7 +53,9 @@ end
 
 ready do
   sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
-    proxy "/faq/#{category}.html", "category.html",
-      :locals => { :category => category, :articles => pages }, :ignore => true
+    if category
+      proxy "/faq/#{category}.html", "category.html",
+        :locals => { :category => category, :articles => pages }, :ignore => true
+    end
   end
 end
