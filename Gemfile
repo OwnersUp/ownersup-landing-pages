@@ -13,5 +13,6 @@ gem "bootstrap-sass", "~> 3.3", require: false
 gem "middleman-search_engine_sitemap"
 gem "middleman-minify-html", "~> 3.4.1"
 gem "middleman-sitemap"
+gem "middleman-google-analytics"
 
 gem "middleman-livereload"
