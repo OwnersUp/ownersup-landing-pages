@@ -1,6 +1,8 @@
   .container
     .page-header
-      h1.text-capitalize="#{category} Articles"
+      .back=link_to "Back to FAQ", "/faq/"
+      h1.text-capitalize="#{category} Questions"
+      h4= data.categories[category]
     .row
       article.col-md-8
         ul.nav

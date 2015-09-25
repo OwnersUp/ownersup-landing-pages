@@ -2,9 +2,9 @@
   .container
     - if current_page.data.title
       .page-header
-        .back=link_to 'Back to FAQ', '/faq'
-        h1
-          =current_page.data.title
+        .back=link_to "Back to #{current_page.data.category}", "/faq/#{current_page.data.category}"
+        h4.text-capitalize="#{current_page.data.category} Questions"
+        h1=current_page.data.title
     .row
       article.col-md-7
         = yield
