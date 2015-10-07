@@ -3,7 +3,7 @@
 		.col-md-4
 			a.thumbnail href="/faq/#{category}/"
 				.caption.text-center
-					h3.text-capitalize=category
-					p= data.categories[category]
+					h3.text-capitalize=data.categories[category].name
+					p= data.categories[category].description
 					p
 						strong= "#{pages.count} Articles"

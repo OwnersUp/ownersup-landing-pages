@@ -4,10 +4,19 @@ hide_from_sitemap: true
   .container
     .page-header
       .back=link_to "Back to FAQ", "/faq/"
-      h1.text-capitalize="#{category} Questions"
-      h4= data.categories[category]
+      h1.text-capitalize="#{data.categories[category].name} Questions"
+      h4= data.categories[category].description
     .row
-      article.col-md-8
-        ul.nav
-          - articles.each do |article|
-            li= link_to article.data.title, article.url
+      - if overview_exists
+        article.col-md-7
+          = partial "faq/#{category}/overview"
+        aside.col-md-5
+          ul.nav
+            - articles.each do |article|
+              li= link_to article.data.title, article.url
+
+      - else
+        article.col-md-8
+          ul.nav
+            - articles.each do |article|
+              li= link_to article.data.title, article.url

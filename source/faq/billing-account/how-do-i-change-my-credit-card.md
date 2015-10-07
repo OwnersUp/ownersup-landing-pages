@@ -1,6 +1,6 @@
 ---
 title: How do I change my credit card?
-category: billing
+category: billing-account
 ---
 You're card can be changed at any time. To do so:
 

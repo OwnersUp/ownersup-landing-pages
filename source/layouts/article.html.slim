@@ -2,16 +2,15 @@
   .container
     - if current_page.data.title
       .page-header
-        .back=link_to "Back to #{current_page.data.category}", "/faq/#{current_page.data.category}"
-        h4.text-capitalize="#{current_page.data.category} Questions"
+        - category = data.categories[current_page.data.category]
+        .back=link_to "Back to #{category.name}", "/faq/#{current_page.data.category}"
+        h4.text-capitalize="#{category.name} Questions"
         h1=current_page.data.title
     .row
       article.col-md-7
         = yield
-      aside.well.col-md-5
+      aside.col-md-5
         ul.nav.nav-pills.nav-stacked
-          li.text-capitalize
-            strong="#{current_page.data.category} Articles"
           - sitemap.where(category: current_page.data.category).all.each do |article|
             - active = article.url == current_page.url ? 'active' : '';
             li class=active
