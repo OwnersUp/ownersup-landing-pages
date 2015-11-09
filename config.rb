@@ -32,6 +32,16 @@ configure :build do
   activate :minify_javascript
   activate :minify_html
   activate :asset_hash
+
+  # Compress and optimise images during build
+  # Documentation: https://github.com/plasticine/middleman-imageoptim
+  activate :imageoptim do |options|
+    # Image extensions to attempt to compress
+    options.image_extensions = %w(.png .jpg .gif .svg)
+    # Cause image_optim to be in shouty-mode
+    options.verbose = false
+  end
+
 end
 
 activate :deploy do |deploy|
