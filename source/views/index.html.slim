@@ -1,7 +1,38 @@
 .jumbotron
 	.container.text-center
-		h1 How can we help?
+		h1
+			| Help people become better&nbsp;
+			span.rotate entrepreneurs, writers, job seekers, humans
+		img src="/images/screenshot.png"
 
-.container
-	.row
-		= partial 'category-list'
+.container.homepage-container
+	.row.tagline
+		.col-md-12.text-center
+			h1
+				strong The OwnersUp Platform
+				em  empowers
+				br
+				strong facilitators, coaches, mentors, and counsellors
+				br
+				| to help people become more than they are alone
+
+	section.row.accountability
+		.col-md-8
+			h2 Success through community
+			p The cornerstone of the OwnersUp Platform is small groups. Journaling and setting goals together gives people a bigger perspective and motivates them to follow through.
+		.col-md-4
+			.thumbnail
+				img src="images/screenshot-comments.png"
+
+	section.row.management
+		.col-md-8
+			h2 Intuitive group management & custimization
+			p Easily manager your groups and see how your clients are doing.
+
+		.col-md-4
+			.thumbnail
+				img src="images/screenshot-management.png"
+
+	section.row.newsletter
+		.col-md-12.text-center
+			= partial "mailchimp-signup"

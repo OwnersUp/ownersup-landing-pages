@@ -367,7 +367,7 @@ $container-lg:                 $container-large-desktop !default;
 $navbar-height:                    70px !default;
 // $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-margin-bottom:             0;
-$navbar-border-radius:             $border-radius-base !default;
+$navbar-border-radius:             0;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
@@ -494,8 +494,8 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $brand-light;
-$jumbotron-heading-color:        $gray;
+$jumbotron-bg:                   $brand-primary;
+$jumbotron-heading-color:        #fff;
 $jumbotron-font-size:            ceil(($font-size-base * 1.2)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 2.5)) !default;
 

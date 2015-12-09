@@ -49,8 +49,9 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
+activate :bower
 after_configuration do
-  sprockets.append_path File.join root.to_s, "bower_components"
+  sprockets.append_path File.join root.to_s, "vendor/assets/bower"
 end
 
 helpers do

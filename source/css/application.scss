@@ -6,8 +6,12 @@
 
 @import "variables";             // Bootstrap variable overrides
 @import "bootstrap-includes";    // Bootstrap core
+@import "jquery.simple-text-rotator/simpletextrotator";
 
-body { position: relative; }
+body {
+  position: relative;
+  padding-top: 70px;
+}
 article { margin-bottom: 2em; }
 
 .navbar-brand {
@@ -16,6 +20,13 @@ article { margin-bottom: 2em; }
     margin-top: -.3em;
   }
 
+}
+
+.rotate {
+  .rotating {
+    min-width: 200px;
+    text-align: left;
+  }
 }
 
 .navbar .navbar-form {
@@ -45,13 +56,32 @@ article { margin-bottom: 2em; }
   // background-size: cover;
   // background-position: 50%;
   // box-shadow: inset 0px 2px 6px rgba(34,34,34,.5);
-
   margin-top: -24px;
+  padding-bottom: 0;
+  border-bottom: 1px solid $gray-lighter;
+
+  .container {
+    overflow: hidden;
+    height: 500px
+  }
 
   h1 {
-    font-weight: 700;
+    font-weight: 300;
     // text-shadow: 0 2px 2px rgba(0,0,0,.5)
   }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.homepage-container {
+  section {
+    margin: 3em 0;
+  }
+}
+.tagline {
+  h1 { line-height: 1.4em; margin-bottom: 1em; }
 }
 
 .thumbnail {

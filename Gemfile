@@ -11,6 +11,7 @@ gem "redcarpet"
 gem "bootstrap-sass", "~> 3.3", require: false
 gem "middleman-autoprefixer", "~> 2.6"
 
+gem 'middleman-bower'
 gem "middleman-search_engine_sitemap"
 gem "middleman-jquery", "~> 2.1"
 gem "middleman-minify-html", "~> 3.4"
