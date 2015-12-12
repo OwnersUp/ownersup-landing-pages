@@ -31,7 +31,7 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
-  activate :asset_hash
+  # activate :asset_hash
 
   # Compress and optimise images during build
   # Documentation: https://github.com/plasticine/middleman-imageoptim
@@ -67,11 +67,4 @@ helpers do
 end
 
 ready do
-  sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
-    if category
-      overview_exists = File.exists?("source/faq/#{category}/_overview.slim")
-      proxy "/faq/#{category}.html", "category.html",
-        :locals => { :category => category, :articles => pages, overview_exists: overview_exists }, :ignore => true
-    end
-  end
 end
