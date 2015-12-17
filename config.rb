@@ -20,7 +20,7 @@ activate :directory_indexes
 activate :search_engine_sitemap
 
 activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-65107405-4'
+  ga.tracking_id = 'UA-65107405-5'
 end
 
 configure :development do

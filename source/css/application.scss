@@ -43,6 +43,10 @@ section {
     background: $brand-secondary;
     color: #fff;
   }
+
+  &.apply {
+    padding-top: 4em;
+  }
 }
 
 li {
@@ -65,6 +69,9 @@ li {
   }
 }
 
+.embed-responsive {
+  margin-top: 1.5em;
+}
 
 .tagline {
   h1 { line-height: 1.4em; margin-bottom: 1em; }
