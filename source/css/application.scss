@@ -18,8 +18,19 @@ body {
   padding-top: 70px;
 }
 
+section .col-md-12 h1 {
+  text-align: center;
+}
+
 h2 {
   font-weight: 700;
+}
+
+p {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 .field {
