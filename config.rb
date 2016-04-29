@@ -3,7 +3,8 @@ require "extensions/views"
 
 ::Slim::Engine.set_options pretty: true, format: :html
 
-set :url_root, 'http://docs.ownersup.com'
+set :url_root, 'http://ownersup.com/free-trial'
+set :relative_links, true
 
 set :css_dir, 'css'
 set :js_dir, 'js'
@@ -11,6 +12,8 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :partials_dir, '_partials'
 page "/faq/*/*", :layout => "article"
+
+set :relative_links, true
 
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true
@@ -20,7 +23,7 @@ activate :directory_indexes
 activate :search_engine_sitemap
 
 activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-65107405-4'
+  ga.tracking_id = 'UA-65107405-5'
 end
 
 configure :development do
@@ -31,7 +34,7 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
-  activate :asset_hash
+  # activate :asset_hash
 
   # Compress and optimise images during build
   # Documentation: https://github.com/plasticine/middleman-imageoptim
@@ -67,11 +70,4 @@ helpers do
 end
 
 ready do
-  sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
-    if category
-      overview_exists = File.exists?("source/faq/#{category}/_overview.slim")
-      proxy "/faq/#{category}.html", "category.html",
-        :locals => { :category => category, :articles => pages, overview_exists: overview_exists }, :ignore => true
-    end
-  end
 end

@@ -1,0 +1,25 @@
+.navbar-brand {
+  img {
+    height: 30px;
+    margin-top: -.3em;
+  }
+
+}
+
+.navbar .navbar-form {
+  .form-control {
+    width: 70px;
+
+    &:focus {
+      transition: all 50ms ease-in-out;
+      width: 200px;
+    }
+  }
+  @media (max-width: $screen-md-min) {
+    width: 100%;
+
+    .form-group { width: 100%; }
+    .form-control,
+    .form-control:focus { width: 93%; }
+  }
+}

@@ -8,18 +8,69 @@
 @import "bootstrap-includes";    // Bootstrap core
 @import "jquery.simple-text-rotator/simpletextrotator";
 
+@import "navbar";
+@import "jumbotron";
+@import "screenshots";
+@import "footer";
+
 body {
   position: relative;
   padding-top: 70px;
 }
-article { margin-bottom: 2em; }
 
-.navbar-brand {
-  img {
-    height: 30px;
-    margin-top: -.3em;
+section .col-md-12 h1 {
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.field {
+  @extend .form-control;
+  background: red;
+}
+
+.radio-option {
+  display: block;
+}
+
+section {
+  position: relative;
+  margin-bottom: 3em;
+  padding: 1.5em 0 3em 0 ;
+  border-bottom: 1px solid $gray-lighter;
+
+  &.are-you-ready {
+    margin-top: -3em;
+    padding-top: 3em;
+    background: $brand-secondary;
+    color: #fff;
   }
 
+  &.apply {
+    padding-top: 4em;
+  }
+}
+
+li {
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.list-unstyled li {
+  margin-bottom: 1em;
+}
+
+.list-inline li {
+  margin: .5em 1em;
 }
 
 .rotate {
@@ -29,118 +80,10 @@ article { margin-bottom: 2em; }
   }
 }
 
-.navbar .navbar-form {
-  .form-control {
-    width: 70px;
-
-    &:focus {
-      transition: all 50ms ease-in-out;
-      width: 200px;
-    }
-  }
-  @media (max-width: $screen-md-min) {
-    width: 100%;
-
-    .form-group { width: 100%; }
-    .form-control,
-    .form-control:focus { width: 93%; }
-  }
+.embed-responsive {
+  margin-top: 1.5em;
 }
 
-.page-header {
-  h1 { font-weight: 300; }
-}
-
-.jumbotron {
-  // background-image: url(/images/city-bg.jpg);
-  // background-size: cover;
-  // background-position: 50%;
-  // box-shadow: inset 0px 2px 6px rgba(34,34,34,.5);
-  margin-top: -24px;
-  padding-bottom: 0;
-  border-bottom: 1px solid $gray-lighter;
-
-  .container {
-    overflow: hidden;
-    height: 500px
-  }
-
-  h1 {
-    font-weight: 300;
-    // text-shadow: 0 2px 2px rgba(0,0,0,.5)
-  }
-
-  img {
-    max-width: 100%;
-  }
-}
-
-.homepage-container {
-  section {
-    margin: 3em 0;
-  }
-}
 .tagline {
   h1 { line-height: 1.4em; margin-bottom: 1em; }
-}
-
-.thumbnail {
-  h3 {
-    margin-top: 8px;
-  }
-
-  &:hover {
-    background: $brand-light;
-    text-decoration: none;
-  }
-}
-
-.page-header {
-  h1 { margin-top: .25em; }
-  h4 {
-    color: #999;
-    font-weight: 300;
-  }
-
-  .back {
-    position: relative;
-    top: 1em;
-    float: right;
-    text-transform: capitalize;
-
-    @media (max-width: $screen-sm-max) {
-      float: none;
-      top: 0;
-      margin-top: -2em;
-    }
-  }
-}
-
-#toc {
-  &.affix {
-    width: 350px;
-    top: 18px;
-  }
-
-  .nav {
-    padding: 0;
-
-    li {
-      list-style: none;
-
-      &.active a {
-        background-color: $brand-secondary;
-        color: #fff;
-      }
-    }
-
-    a {
-      display: block;
-    }
-  }
-}
-
-footer.container {
-  margin-top: 2em;
-  border-top: 1px solid $gray-lighter;
 }
