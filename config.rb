@@ -4,6 +4,7 @@ require "extensions/views"
 ::Slim::Engine.set_options pretty: true, format: :html
 
 set :url_root, 'http://ownersup.com/free-trial'
+set :relative_links, true
 
 set :css_dir, 'css'
 set :js_dir, 'js'
